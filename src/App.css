@@ -1,50 +1,106 @@
-/* Global reset */
-* {
+body {
   margin: 0;
   padding: 0;
-  box-sizing: border-box;
-}
-
-/* Blue theme background */
-body {
+  background: #eef3ff;
   font-family: Arial, sans-serif;
-  background-color: #eef4ff;  /* very light blue */
-  color: #0a1a3c;              /* dark navy text */
 }
 
-/* App container for centered layouts */
-.app-container {
-  max-width: 1200px;
-  margin: auto;
-  padding: 20px;
-}
-
-/* Buttons */
-button {
-  padding: 10px 18px;
-  border-radius: 6px;
-  border: none;
-  background-color: #1d4ed8;  /* blue */
+/* NAVBAR */
+.navbar {
+  background: #0a1a3c;
   color: white;
-  cursor: pointer;
-  font-size: 16px;
-  transition: 0.2s ease;
+  padding: 12px 30px;
+  display: flex;
+  align-items: center;
+  gap: 20px;
 }
 
-button:hover {
-  background-color: #1e40af;  /* darker blue */
+.logo {
+  background: #2563ff;
+  padding: 10px 18px;
+  border-radius: 10px;
+  font-size: 20px;
+  font-weight: bold;
 }
 
-/* Headings */
-h1, h2, h3 {
-  color: #0f1b4c;
+.brand {
+  margin-right: auto;
 }
 
-/* Cards / sections */
+.nav-links a {
+  margin: 0 12px;
+  text-decoration: none;
+  color: white;
+}
+
+.btn-start {
+  background: #3b67ff;
+  padding: 7px 14px;
+  border: none;
+  color: white;
+  border-radius: 5px;
+}
+
+/* HERO */
+.hero {
+  display: flex;
+  justify-content: space-between;
+  padding: 50px;
+  align-items: center;
+}
+
+.hero-text {
+  width: 55%;
+}
+
+.hero-img {
+  width: 32%;
+  border-radius: 15px;
+}
+
+/* BLUE SECTION */
+.blue-section {
+  background: linear-gradient(180deg, #4a67e3, #3952bd);
+  padding: 40px;
+  color: white;
+  border-bottom-right-radius: 40px;
+}
+
+.section-heading {
+  text-align: center;
+  font-size: 26px;
+  margin-bottom: 30px;
+}
+
+/* CARDS */
+.card-row,
+.grid-section {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 25px;
+  padding: 30px;
+}
+
 .card {
-  background: white;
+  background: #2f3f55;
+  color: white;
+  width: 300px;
+  padding: 25px;
+  border-radius: 18px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+}
+
+.center-heading {
+  text-align: center;
+  color: #1f4aff;
+  margin-top: 40px;
+}
+
+.footer {
+  text-align: center;
   padding: 20px;
-  border-radius: 12px;
-  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
-  margin-bottom: 20px;
+  background: #0a1a3c;
+  color: white;
+  margin-top: 40px;
 }
