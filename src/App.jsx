@@ -1,248 +1,231 @@
-import React, { useState } from "react";
+import React from "react";
 import "./App.css";
 
 function App() {
-  const [menuOpen, setMenuOpen] = useState(false);
-  const toggleMenu = () => setMenuOpen(!menuOpen);
-
   return (
-    <div>
+    <div className="main">
+      {/* NAVBAR */}
+      <nav className="navbar">
+        <div className="logo">S</div>
+        <h1 className="brand">Stackly</h1>
 
-      {/* Header */}
-      <header className="header">
-        <div className="header-container">
-
-          <div className="logo-section">
-            <div className="logo-circle">S</div>
-            <h1 className="logo-text">Stackly</h1>
-          </div>
-
-          <nav className="nav-links">
-            <a href="#home">Home</a>
-            <a href="#software-solutions">Software Solutions</a>
-            <a href="#services">Services</a>
-            <a href="#about">About</a>
-            <a href="#help">Help</a>
-            <button className="get-started">Get Started</button>
-          </nav>
-
-          <button className="menu-toggle" onClick={toggleMenu}>☰</button>
+        <div className="nav-links">
+          <a href="#">Home</a>
+          <a href="#solutions">Software Solutions</a>
+          <a href="#services">Services</a>
+          <a href="#about">About</a>
+          <a href="#help">Help</a>
+          <button className="btn-start">Get Started</button>
         </div>
+      </nav>
 
-        {menuOpen && (
-          <div className="mobile-menu">
-            <nav>
-              <a href="#home" onClick={toggleMenu}>Home</a>
-              <a href="#software-solutions" onClick={toggleMenu}>Software Solutions</a>
-              <a href="#services" onClick={toggleMenu}>Services</a>
-              <a href="#about" onClick={toggleMenu}>About</a>
-              <a href="#help" onClick={toggleMenu}>Help</a>
-              <button onClick={toggleMenu}>Get Started</button>
-            </nav>
-
-            {/* Working Image */}
-            <img
-              src="https://cdn.pixabay.com/photo/2023/03/15/14/25/ai-7855022_1280.jpg"
-              alt="Menu Preview"
-              style={{ width: "90%", borderRadius: "10px", marginTop: "10px" }}
-            />
-          </div>
-        )}
-      </header>
-
-
-
-      {/* Hero Section */}
-      <section className="hero-section" id="home">
-        <div className="hero-image">
-          <img
-            src="https://cdn.pixabay.com/photo/2023/03/20/18/43/ai-7866724_1280.jpg"
-            alt="AI Illustration"
-          />
-        </div>
-
+      {/* HERO SECTION */}
+      <section className="hero">
         <div className="hero-text">
           <h1>Welcome to Stackly</h1>
-          <p>
-            <b>
-              "Stackly is a forward-thinking technology company dedicated to driving digital transformation."
-            </b>
+
+          <p className="subtitle">
+            "Stackly is a forward-thinking technology company dedicated to driving
+            digital transformation."
           </p>
 
-          <p>
-            <i>
-              We design intelligent, scalable solutions powered by AI and cloud innovation.
-              Our mission is to empower businesses with cutting-edge tools for smarter growth.
-            </i>
+          <p className="description">
+            We design intelligent, scalable solutions powered by AI and cloud
+            innovation. Our mission is to empower businesses with cutting-edge tools
+            for smarter growth. With a passion for innovation and precision, we turn
+            complex ideas into seamless experiences.
           </p>
 
-          <p><b>💡 “Innovating today to define tomorrow’s digital world.”</b></p>
+          <p className="highlight">
+            💡 “Innovating today to define tomorrow’s digital world.”
+          </p>
         </div>
+
+        {/* AI Hero Image */}
+        <img
+          className="hero-img"
+          src="https://cdn.pixabay.com/photo/2023/07/23/07/43/ai-8146164_1280.jpg"
+          alt="AI Hero"
+        />
       </section>
 
+      {/* SOFTWARE SOLUTIONS */}
+      <section id="solutions" className="blue-section">
+        <h2 className="section-heading">Our Software Solutions</h2>
 
-
-      {/* Software Solutions Section */}
-      <section id="software-solutions" className="software-solutions-section">
-        <h1 className="section-title">Our Software Solutions</h1>
-
-        <div className="solutions-cards">
-          <div className="solution-card fade-in">
-            <h2>Custom Enterprise Software</h2>
-            <p>Tailored solutions to optimize enterprise processes with scalability and security.</p>
+        <div className="card-row">
+          <div className="card">
+            <h3>Custom Enterprise Software</h3>
+            <p>
+              Tailored solutions to optimize enterprise processes with scalability
+              and security.
+            </p>
           </div>
 
-          <div className="solution-card fade-in delay-1">
-            <h2>Cloud Migration</h2>
-            <p>Move your infrastructure to the cloud with minimal downtime.</p>
+          <div className="card">
+            <h3>Cloud Migration</h3>
+            <p>
+              Seamlessly move your infrastructure to the cloud with minimal
+              downtime.
+            </p>
           </div>
 
-          <div className="solution-card fade-in delay-2">
-            <h2>AI-Powered Analytics</h2>
-            <p>Unlock insights with advanced AI analytics for decision making.</p>
-          </div>
-        </div>
-      </section>
-
-
-
-      {/* Services Cards */}
-      <h1 className="section-title">We Are Providing</h1>
-
-      <section className="service-cards">
-        <div className="service-card">
-          <h2>Digital Marketing 🌐</h2>
-          <p><i>"Stackly’s digital marketing solutions help elevate brands digitally.”</i></p>
-        </div>
-
-        <div className="service-card">
-          <h2>AI & Automation 🤖</h2>
-          <p><i>"We leverage AI to streamline operations and boost efficiency.”</i></p>
-        </div>
-
-        <div className="service-card">
-          <h2>Web Development 💡</h2>
-          <p><i>"Fast, scalable, responsive websites for your business.”</i></p>
-        </div>
-
-        <div className="service-card">
-          <h2>Mobile App Development 📲</h2>
-          <p><i>"High-performance mobile apps for iOS and Android.”</i></p>
-        </div>
-
-        <div className="service-card">
-          <h2>Branding 🎯</h2>
-          <p><i>"Creative designs that build strong brand identity.”</i></p>
-        </div>
-
-        <div className="service-card">
-          <h2>Online Form Filling 📝</h2>
-          <p><i>"We simplify form-filling using automation tools.”</i></p>
-        </div>
-      </section>
-
-
-
-      {/* Services Section */}
-      <section id="services" className="info-section">
-        <h1>Our Services</h1>
-
-        <div className="info-cards">
-          <div className="info-card">
-            <h2>🌐 Web Development</h2>
-            <p>Secure, scalable websites built with modern tools.</p>
-          </div>
-
-          <div className="info-card">
-            <h2>🤖 AI & Automation</h2>
-            <p>Automate workflows using intelligent AI systems.</p>
-          </div>
-
-          <div className="info-card">
-            <h2>📱 Mobile App Development</h2>
-            <p>Seamless apps for Android and iOS.</p>
-          </div>
-
-          <div className="info-card">
-            <h2>🎯 Digital Marketing</h2>
-            <p>Grow your online presence with targeted strategies.</p>
-          </div>
-
-          <div className="info-card">
-            <h2>🎨 Branding</h2>
-            <p>Creative visuals that match your identity.</p>
-          </div>
-
-          <div className="info-card">
-            <h2>🧾 Form Filling</h2>
-            <p>Automated form filling for speed and accuracy.</p>
+          <div className="card">
+            <h3>AI-Powered Analytics</h3>
+            <p>
+              Unlock insights with advanced AI analytics for data-driven decision
+              making.
+            </p>
           </div>
         </div>
       </section>
 
+      {/* WE ARE PROVIDING */}
+      <h2 className="center-heading">We Are Providing =</h2>
 
+      <section id="services" className="grid-section">
+        <div className="card">
+          <h3>Digital Marketing 🌐</h3>
+          <p>
+            "Stackly’s digital marketing solutions combine strategy and innovation
+            to elevate brands."
+          </p>
+        </div>
 
-      {/* About Section */}
-      <section id="about" className="info-section">
-        <h1>About Us</h1>
+        <div className="card">
+          <h3>AI & Automation 🤖</h3>
+          <p>
+            "We leverage artificial intelligence to streamline operations and boost
+            efficiency."
+          </p>
+        </div>
 
-        <div className="info-cards">
-          <div className="info-card">
-            <h2>Who We Are</h2>
-            <p>We specialize in AI, development, and automation.</p>
-          </div>
+        <div className="card">
+          <h3>Web Development 💡</h3>
+          <p>
+            "Fast, scalable, responsive websites for your business."
+          </p>
+        </div>
 
-          <div className="info-card">
-            <h2>Our Mission</h2>
-            <p>To create technology that simplifies life and boosts efficiency.</p>
-          </div>
-
-          <div className="info-card">
-            <h2>Our Vision</h2>
-            <p>To be a global leader in digital innovation.</p>
-          </div>
-
-          <div className="info-card">
-            <h2>Our Values</h2>
-            <ul>
-              <li>Innovation</li>
-              <li>Integrity</li>
-              <li>Customer First</li>
-              <li>Teamwork</li>
-            </ul>
-          </div>
+        <div className="card">
+          <h3>Mobile App Development 📱</h3>
+          <p>
+            "High-performance apps for iOS and Android."
+          </p>
         </div>
       </section>
 
+      {/* EXTRA SERVICES GRID */}
+      <section className="grid-section">
+        <div className="card">
+          <h3>Web Development 🌐</h3>
+          <p>
+            We build responsive, secure, and scalable websites tailored to your
+            needs.
+          </p>
+        </div>
 
+        <div className="card">
+          <h3>AI & Automation 🤖</h3>
+          <p>
+            Automate workflows with powerful AI-driven tools.
+          </p>
+        </div>
 
-      {/* Help Section */}
-      <section id="help" className="info-section">
-        <h1>Help & Support</h1>
+        <div className="card">
+          <h3>Mobile App Development 📱</h3>
+          <p>
+            User-friendly mobile apps with seamless performance.
+          </p>
+        </div>
 
-        <div className="info-cards">
-          <div className="info-card">
-            <h2>Getting Started</h2>
-            <p>Explore our services to learn more.</p>
-          </div>
+        <div className="card">
+          <h3>Digital Marketing 🎯</h3>
+          <p>
+            Grow your brand through professional online marketing strategies.
+          </p>
+        </div>
 
-          <div className="info-card">
-            <h2>FAQ</h2>
-            <ul>
-              <li><b>Create an account?</b> – Click “Get Started”.</li>
-              <li><b>Reset password?</b> – Use “Forgot Password”.</li>
-              <li><b>Contact support?</b> – support@stackly.com</li>
-            </ul>
-          </div>
+        <div className="card">
+          <h3>Product Branding 🎨</h3>
+          <p>
+            Build a strong identity through creative visual design.
+          </p>
+        </div>
 
-          <div className="info-card">
-            <h2>Contact Us</h2>
-            <p>Email: <b>support@stackly.com</b></p>
-            <p>Phone: <b>+91 98765 43210</b></p>
-          </div>
+        <div className="card">
+          <h3>Online Form Filling 📝</h3>
+          <p>
+            We simplify form automation ensuring accuracy and efficiency.
+          </p>
         </div>
       </section>
 
+      {/* ABOUT */}
+      <section id="about" className="grid-section">
+        <div className="card">
+          <h3>Who We Are</h3>
+          <p>
+            Stackly is a forward-thinking company specializing in digital marketing,
+            development, and AI.
+          </p>
+        </div>
+
+        <div className="card">
+          <h3>Our Mission</h3>
+          <p>
+            Creating technology that simplifies business performance through
+            innovation.
+          </p>
+        </div>
+
+        <div className="card">
+          <h3>Our Vision</h3>
+          <p>
+            To be a global leader in digital innovation delivering impactful
+            solutions.
+          </p>
+        </div>
+
+        <div className="card">
+          <h3>Our Values</h3>
+          <ul>
+            <li>Innovation and learning</li>
+            <li>Integrity & transparency</li>
+            <li>Customer-first mindset</li>
+            <li>Teamwork & collaboration</li>
+          </ul>
+        </div>
+      </section>
+
+      {/* FOOTER SET */}
+      <section className="grid-section">
+        <div className="card">
+          <h3>Getting Started</h3>
+          <p>
+            Explore Home & Services to dive into AI, marketing, and automation.
+          </p>
+        </div>
+
+        <div className="card">
+          <h3>Frequently Asked Questions</h3>
+          <ul>
+            <li>How do I create an account? → Click Get Started.</li>
+            <li>How do I reset my password? → Use “Forgot Password”.</li>
+            <li>How do I contact support? → Email support@stackly.com.</li>
+          </ul>
+        </div>
+
+        <div className="card">
+          <h3>Contact Us</h3>
+          <p>
+            Email: support@stackly.com <br />
+            Phone: +91 98765 43210
+          </p>
+        </div>
+      </section>
+
+      <footer className="footer">© 2025 Stackly — All Rights Reserved</footer>
     </div>
   );
 }
